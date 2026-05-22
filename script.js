@@ -272,22 +272,12 @@ void main() {
   render();
 })();
 
-// Contact form – simple feedback (no backend)
+// Contact form – submitted via Formsubmit.co
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
+  form.addEventListener('submit', () => {
     const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Wysłano! ✦';
+    btn.textContent = 'Wysyłanie… ✦';
     btn.disabled = true;
-    btn.style.background = '#16a34a';
-    btn.style.borderColor = '#16a34a';
-    setTimeout(() => {
-      btn.textContent = 'Wyślij wiadomość ✦';
-      btn.disabled = false;
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      form.reset();
-    }, 3000);
   });
 }
