@@ -445,7 +445,9 @@ ul { list-style: none; }
 }
 
 .hero__content {
-  max-width: 50%;
+  max-width: 52%;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero__insta-tag {
@@ -480,12 +482,12 @@ ul { list-style: none; }
 
 .hero__headline {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(2.4rem, 3.8vw, 4rem);
+  font-size: clamp(2rem, 3vw, 3.4rem);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.1;
   color: #ffffff;
   margin-bottom: 28px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .hero__headline-word {
@@ -1621,9 +1623,11 @@ ul { list-style: none; }
   .footer__inner { grid-template-columns: 1fr; gap: 40px; }
   .footer__links { flex-direction: row; flex-wrap: wrap; gap: 20px; }
   .cta-banner__actions { flex-direction: column; align-items: center; }
-  .hero__headline { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+  .hero__headline { font-size: clamp(1.9rem, 6vw, 2.6rem); }
   .contact__form { padding: 28px 20px; }
   .hero__floating { display: none; }
+  .hero__content { max-width: 100%; }
+  .hero__photo-wrap { opacity: 0.3; }
 }
 
 @media (max-width: 480px) {
