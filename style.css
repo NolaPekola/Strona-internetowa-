@@ -906,10 +906,10 @@ ul { list-style: none; }
   box-shadow: 0 28px 70px rgba(37, 99, 235, 0.4);
 }
 .offer__card--featured h3 { color: #fff; }
-.offer__card--featured h3 small { color: #60a5fa; }
-.offer__card--featured p { color: rgba(255,255,255,0.7); }
-.offer__card--featured .offer__list li { color: rgba(255,255,255,0.85); }
-.offer__card--featured .offer__list li::before { color: #60a5fa; }
+.offer__card--featured h3 small { color: #fff; }
+.offer__card--featured p { color: #fff; }
+.offer__card--featured .offer__list li { color: #fff; }
+.offer__card--featured .offer__list li::before { color: #fff; }
 .offer__card--featured .offer__card-badge { background: #2563EB; color: #fff; }
 
 .offer__card-badge {
