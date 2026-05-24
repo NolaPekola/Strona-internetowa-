@@ -914,6 +914,23 @@ ul { list-style: none; }
 .offer__card--featured .offer__list li { color: #fff; }
 .offer__card--featured .offer__list li::before { color: #fff; }
 .offer__card--featured .offer__card-badge { background: #2563EB; color: #fff; }
+.offer__card--featured .offer__price { color: rgba(255,255,255,0.9); }
+
+.offer__card-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.offer__price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--royal-blue);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
 
 .offer__card-badge {
   position: absolute;
