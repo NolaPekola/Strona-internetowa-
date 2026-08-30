@@ -310,46 +310,87 @@
       </div>
 
       <!-- KARUZELA OPINII
-           Aby dodać nową opinię: skopiuj blok poniżej (od <div class="rc"> do </div>)
-           i wklej go przed komentarzem "KONIEC OPINII".
+           Aby dodać nową opinię: skopiuj jeden blok rc poniżej i wklej go przed "KONIEC OPINII".
            Zmień: inicjał w rc__avatar, imię w <strong>, datę w <span>, treść w rc__text. -->
-      <div class="reviews__carousel">
-        <button class="reviews__arrow reviews__arrow--prev" aria-label="Poprzednia opinia">&#8592;</button>
-        <div class="rc__grid rc__grid--scroll" id="reviewsTrack">
+      <div class="reviews__carousel-wrap">
+        <button class="reviews__arrow reviews__arrow--prev" aria-label="Poprzednia">&#8592;</button>
+        <div class="reviews__window">
+          <div class="reviews__track" id="reviewsTrack">
 
-          <!-- OPINIA 1 -->
-          <div class="rc">
-            <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
-            <p class="rc__text">Z Nelą uczę się już od 2 miesięcy i bardzo mi się podoba jak dynamicznie prowadzone są zajęcia. Jest zadawane mnóstwo pytań, rozmawiamy o życiu, codzienności — mega pomocne i w końcu czuję że się odblokowałam, bo po okropnej nauczycielce w liceum szczerze nienawidziłam angielskiego.</p>
-            <div class="rc__author">
-              <div class="rc__avatar">P</div>
-              <div class="rc__info"><strong>Paulina</strong><span>16 maja 2026</span></div>
+            <!-- OPINIA 1 -->
+            <div class="rc">
+              <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+              <p class="rc__text">Bardzo polecam!!! Nela jest wspaniałą nauczycielką, zdolną i ma super podejście do swoich uczniów. Najbardziej lubię interaktywne lekcje, które nie zanudzają, a lekcja mija bardzo szybko. Zawsze dopasowuje temat, a także poziom angielskiego do ucznia. Podczas nauki w szkole nie widziałam efektów, a z Nelą po paru lekcjach czuję się już pewniej z angielskim.</p>
+              <div class="rc__author">
+                <div class="rc__avatar">J</div>
+                <div class="rc__info"><strong>Julia</strong><span>11 sierpnia 2026</span></div>
+              </div>
             </div>
-          </div>
 
-          <!-- OPINIA 2 -->
-          <div class="rc">
-            <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
-            <p class="rc__text">Bardzo polecam. Konkretne, energiczne i z dużą ilością uśmiechu. Widać że zależy na uczniu i fajnie w końcu poćwiczyć bez oceniania — naprawdę super.</p>
-            <div class="rc__author">
-              <div class="rc__avatar">M</div>
-              <div class="rc__info"><strong>Maciej</strong><span>27 kwietnia 2026</span></div>
+            <!-- OPINIA 2 -->
+            <div class="rc">
+              <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+              <p class="rc__text">Z Nelą uczę się od tego roku i jestem bardzo zadowolony z tej współpracy. Przede wszystkim jest niezwykle miłą i życzliwą osobą. Na zajęciach panuje świetna atmosfera, która zawsze motywuje mnie do dalszej nauki. Lekcje są ciekawe, a Nela potrafi w prosty i zrozumiały sposób przekazywać wiedzę. Zdecydowanie polecam naukę z nią.</p>
+              <div class="rc__author">
+                <div class="rc__avatar">J</div>
+                <div class="rc__info"><strong>Julia</strong><span>28 lipca 2026</span></div>
+              </div>
             </div>
-          </div>
 
-          <!-- OPINIA 3 -->
-          <div class="rc">
-            <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
-            <p class="rc__text">Mieliśmy kilka prywatnych lekcji i było bardzo profesjonalnie. W 10 h nauczyłem się więcej niż przez 3 lata gimnazjum. Jest najlepsza!</p>
-            <div class="rc__author">
-              <div class="rc__avatar">K</div>
-              <div class="rc__info"><strong>Karol</strong><span>21 kwietnia 2026</span></div>
+            <!-- OPINIA 3 -->
+            <div class="rc">
+              <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+              <p class="rc__text">Z Nelą uczę się już od 8 miesięcy i jestem w stanie powiedzieć, że jest ona cudowną nauczycielką, a mój poziom angielskiego bardzo się poprawił. Nela nie jest stereotypową nauczycielką - ma ona swoje podejście do każdego, w tym sprawia że zajęcia to nie tylko obowiązek ale też przyjemność.</p>
+              <div class="rc__author">
+                <div class="rc__avatar">Z</div>
+                <div class="rc__info"><strong>Zuzanna</strong><span>30 maja 2026</span></div>
+              </div>
             </div>
-          </div>
 
-          <!-- KONIEC OPINII -->
+            <!-- OPINIA 4 -->
+            <div class="rc">
+              <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+              <p class="rc__text">Z całego serca mogę polecić, przy zajęciach z panią Nelą otworzyłam się na rozmowy, lekcja jest bardzo fajnie prowadzona oraz bez stresu wszystko jest dokładnie tłumaczone.</p>
+              <div class="rc__author">
+                <div class="rc__avatar">J</div>
+                <div class="rc__info"><strong>Julia</strong><span>26 maja 2026</span></div>
+              </div>
+            </div>
+
+            <!-- OPINIA 5 -->
+            <div class="rc">
+              <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+              <p class="rc__text">Z Nelą uczę się już od 2 miesięcy i bardzo mi się podoba jak dynamicznie prowadzone są zajęcia. Jest zadawane mnóstwo pytań, rozmawiamy o życiu, codzienności — mega pomocne i w końcu czuję że się odblokowałam, bo po okropnej nauczycielce w liceum szczerze nienawidziłam angielskiego.</p>
+              <div class="rc__author">
+                <div class="rc__avatar">P</div>
+                <div class="rc__info"><strong>Paulina</strong><span>16 maja 2026</span></div>
+              </div>
+            </div>
+
+            <!-- OPINIA 6 -->
+            <div class="rc">
+              <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+              <p class="rc__text">Bardzo polecam. Konkretne, energiczne i z dużą ilością uśmiechu. Widać że zależy na uczniu i fajnie w końcu poćwiczyć bez oceniania — naprawdę super.</p>
+              <div class="rc__author">
+                <div class="rc__avatar">M</div>
+                <div class="rc__info"><strong>Maciej</strong><span>27 kwietnia 2026</span></div>
+              </div>
+            </div>
+
+            <!-- OPINIA 7 -->
+            <div class="rc">
+              <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+              <p class="rc__text">Mieliśmy kilka prywatnych lekcji i było bardzo profesjonalnie. W 10 h nauczyłem się więcej niż przez 3 lata gimnazjum. Jest najlepsza!</p>
+              <div class="rc__author">
+                <div class="rc__avatar">K</div>
+                <div class="rc__info"><strong>Karol</strong><span>21 kwietnia 2026</span></div>
+              </div>
+            </div>
+
+            <!-- KONIEC OPINII -->
+          </div>
         </div>
-        <button class="reviews__arrow reviews__arrow--next" aria-label="Następna opinia">&#8594;</button>
+        <button class="reviews__arrow reviews__arrow--next" aria-label="Następna">&#8594;</button>
       </div>
       <div class="reviews__dots" id="reviewsDots"></div>
 

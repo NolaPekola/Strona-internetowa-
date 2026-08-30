@@ -280,44 +280,55 @@ void main() {
 
   const cards = Array.from(track.querySelectorAll('.rc'));
   const total = cards.length;
-  let current = 0;
+  let page = 0;
 
-  // Build dots
-  const dots = cards.map((_, i) => {
-    const d = document.createElement('button');
-    d.className = 'reviews__dot' + (i === 0 ? ' reviews__dot--active' : '');
-    d.setAttribute('aria-label', 'Opinia ' + (i + 1));
-    d.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(d);
-    return d;
-  });
+  function perPage() { return window.innerWidth <= 768 ? 1 : 3; }
+  function pageCount() { return Math.ceil(total / perPage()); }
 
-  function goTo(index) {
-    current = (index + total) % total;
-    const card = cards[current];
-    track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
-    dots.forEach((d, i) => d.classList.toggle('reviews__dot--active', i === current));
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const count = pageCount();
+    for (let i = 0; i < count; i++) {
+      const d = document.createElement('button');
+      d.className = 'reviews__dot' + (i === page ? ' reviews__dot--active' : '');
+      d.setAttribute('aria-label', 'Strona ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
   }
 
-  // Arrows
+  function goTo(p) {
+    page = Math.max(0, Math.min(p, pageCount() - 1));
+    const pp = perPage();
+    // Each card takes 1/pp of track width + gap
+    const gap = 24;
+    const cardW = (track.parentElement.offsetWidth - gap * (pp - 1)) / pp;
+    const offset = page * pp * (cardW + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+    dotsWrap.querySelectorAll('.reviews__dot').forEach((d, i) =>
+      d.classList.toggle('reviews__dot--active', i === page)
+    );
+    prev.disabled = page === 0;
+    next.disabled = page >= pageCount() - 1;
+  }
+
   const prev = document.querySelector('.reviews__arrow--prev');
   const next = document.querySelector('.reviews__arrow--next');
-  if (prev) prev.addEventListener('click', () => goTo(current - 1));
-  if (next) next.addEventListener('click', () => goTo(current + 1));
+  if (prev) prev.addEventListener('click', () => goTo(page - 1));
+  if (next) next.addEventListener('click', () => goTo(page + 1));
 
-  // Sync dots on manual scroll/swipe
-  track.addEventListener('scroll', () => {
-    const scrollLeft = track.scrollLeft;
-    let closest = 0, minDist = Infinity;
-    cards.forEach((card, i) => {
-      const dist = Math.abs(card.offsetLeft - track.offsetLeft - scrollLeft);
-      if (dist < minDist) { minDist = dist; closest = i; }
-    });
-    if (closest !== current) {
-      current = closest;
-      dots.forEach((d, i) => d.classList.toggle('reviews__dot--active', i === current));
-    }
+  // Touch swipe
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) goTo(page + (dx < 0 ? 1 : -1));
   }, { passive: true });
+
+  window.addEventListener('resize', () => { buildDots(); goTo(0); });
+
+  buildDots();
+  goTo(0);
 })();
 
 // Contact form – submitted via Formsubmit.co
