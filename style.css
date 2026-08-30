@@ -1174,6 +1174,8 @@ ul { list-style: none; }
 .reviews__window {
   overflow: hidden;
   flex: 1;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 .reviews__track {
