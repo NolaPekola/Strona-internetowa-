@@ -1755,7 +1755,8 @@ ul { list-style: none; }
   .section { padding: 72px 0; }
   .nav__links, .btn--nav { display: none; }
   .nav__hamburger { display: flex; }
-  .why__grid { grid-template-columns: 1fr; }
+  .why__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .why__item { padding: 24px 16px; font-size: 0.85rem; }
   .footer__inner { grid-template-columns: 1fr; gap: 40px; }
   .footer__links { flex-direction: row; flex-wrap: wrap; gap: 20px; }
   .cta-banner__actions { flex-direction: column; align-items: center; }
