@@ -272,6 +272,54 @@ void main() {
   render();
 })();
 
+// Reviews carousel
+(function () {
+  const track = document.getElementById('reviewsTrack');
+  const dotsWrap = document.getElementById('reviewsDots');
+  if (!track) return;
+
+  const cards = Array.from(track.querySelectorAll('.rc'));
+  const total = cards.length;
+  let current = 0;
+
+  // Build dots
+  const dots = cards.map((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'reviews__dot' + (i === 0 ? ' reviews__dot--active' : '');
+    d.setAttribute('aria-label', 'Opinia ' + (i + 1));
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+    return d;
+  });
+
+  function goTo(index) {
+    current = (index + total) % total;
+    const card = cards[current];
+    track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    dots.forEach((d, i) => d.classList.toggle('reviews__dot--active', i === current));
+  }
+
+  // Arrows
+  const prev = document.querySelector('.reviews__arrow--prev');
+  const next = document.querySelector('.reviews__arrow--next');
+  if (prev) prev.addEventListener('click', () => goTo(current - 1));
+  if (next) next.addEventListener('click', () => goTo(current + 1));
+
+  // Sync dots on manual scroll/swipe
+  track.addEventListener('scroll', () => {
+    const scrollLeft = track.scrollLeft;
+    let closest = 0, minDist = Infinity;
+    cards.forEach((card, i) => {
+      const dist = Math.abs(card.offsetLeft - track.offsetLeft - scrollLeft);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    if (closest !== current) {
+      current = closest;
+      dots.forEach((d, i) => d.classList.toggle('reviews__dot--active', i === current));
+    }
+  }, { passive: true });
+})();
+
 // Contact form – submitted via Formsubmit.co
 const form = document.getElementById('contactForm');
 if (form) {

@@ -1164,6 +1164,59 @@ ul { list-style: none; }
 }
 
 /* --- REVIEWS --- */
+.reviews__carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviews__arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 99, 235, 0.2);
+  background: #fff;
+  color: var(--royal-blue);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reviews__arrow:hover {
+  background: var(--royal-blue);
+  border-color: var(--royal-blue);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.reviews__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.reviews__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.2);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.reviews__dot--active {
+  background: var(--royal-blue);
+  transform: scale(1.3);
+}
+
+@media (max-width: 600px) {
+  .reviews__arrow { display: none; }
+}
+
+
 .reviews__source-link {
   color: var(--royal-blue);
   font-weight: 500;

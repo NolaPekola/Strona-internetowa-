@@ -307,50 +307,52 @@
       <div class="section__header reveal">
         <span class="section__eyebrow">Opinie</span>
         <h2 class="section__title">Co mówią moi<br /><span class="gradient-text">uczniowie?</span></h2>
-        <p class="section__desc">Opinie pochodzą z portalu <a href="https://www.e-korepetycje.net/pekulnela/jezyk-angielski" target="_blank" rel="noopener noreferrer" class="reviews__source-link">e-korepetycje.pl</a></p>
       </div>
-      <div class="rc__grid">
 
-        <!-- OPINIA 1 -->
-        <div class="rc reveal delay-1">
-          <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
-          <p class="rc__text">Z Nelą uczę się już od 2 miesięcy i bardzo mi się podoba jak dynamicznie prowadzone są zajęcia. Jest zadawane mnóstwo pytań, rozmawiamy o życiu, codzienności — mega pomocne i w końcu czuję że się odblokowałam, bo po okropnej nauczycielce w liceum szczerze nienawidziłam angielskiego.</p>
-          <div class="rc__author">
-            <div class="rc__avatar">P</div>
-            <div class="rc__info">
-              <strong>Paulina</strong>
-              <span>16 maja 2026</span>
+      <!-- KARUZELA OPINII
+           Aby dodać nową opinię: skopiuj blok poniżej (od <div class="rc"> do </div>)
+           i wklej go przed komentarzem "KONIEC OPINII".
+           Zmień: inicjał w rc__avatar, imię w <strong>, datę w <span>, treść w rc__text. -->
+      <div class="reviews__carousel">
+        <button class="reviews__arrow reviews__arrow--prev" aria-label="Poprzednia opinia">&#8592;</button>
+        <div class="rc__grid rc__grid--scroll" id="reviewsTrack">
+
+          <!-- OPINIA 1 -->
+          <div class="rc">
+            <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+            <p class="rc__text">Z Nelą uczę się już od 2 miesięcy i bardzo mi się podoba jak dynamicznie prowadzone są zajęcia. Jest zadawane mnóstwo pytań, rozmawiamy o życiu, codzienności — mega pomocne i w końcu czuję że się odblokowałam, bo po okropnej nauczycielce w liceum szczerze nienawidziłam angielskiego.</p>
+            <div class="rc__author">
+              <div class="rc__avatar">P</div>
+              <div class="rc__info"><strong>Paulina</strong><span>16 maja 2026</span></div>
             </div>
           </div>
-        </div>
 
-        <!-- OPINIA 2 -->
-        <div class="rc reveal delay-2">
-          <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
-          <p class="rc__text">Bardzo polecam. Konkretne, energiczne i z dużą ilością uśmiechu. Widać że zależy na uczniu i fajnie w końcu poćwiczyć bez oceniania — naprawdę super.</p>
-          <div class="rc__author">
-            <div class="rc__avatar">M</div>
-            <div class="rc__info">
-              <strong>Maciej</strong>
-              <span>27 kwietnia 2026</span>
+          <!-- OPINIA 2 -->
+          <div class="rc">
+            <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+            <p class="rc__text">Bardzo polecam. Konkretne, energiczne i z dużą ilością uśmiechu. Widać że zależy na uczniu i fajnie w końcu poćwiczyć bez oceniania — naprawdę super.</p>
+            <div class="rc__author">
+              <div class="rc__avatar">M</div>
+              <div class="rc__info"><strong>Maciej</strong><span>27 kwietnia 2026</span></div>
             </div>
           </div>
-        </div>
 
-        <!-- OPINIA 3 -->
-        <div class="rc reveal delay-3">
-          <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
-          <p class="rc__text">Mieliśmy kilka prywatnych lekcji i było bardzo profesjonalnie. W 10 h nauczyłem się więcej niż przez 3 lata gimnazjum. Jest najlepsza!</p>
-          <div class="rc__author">
-            <div class="rc__avatar">K</div>
-            <div class="rc__info">
-              <strong>Karol</strong>
-              <span>21 kwietnia 2026</span>
+          <!-- OPINIA 3 -->
+          <div class="rc">
+            <div class="rc__stars">✦ ✦ ✦ ✦ ✦</div>
+            <p class="rc__text">Mieliśmy kilka prywatnych lekcji i było bardzo profesjonalnie. W 10 h nauczyłem się więcej niż przez 3 lata gimnazjum. Jest najlepsza!</p>
+            <div class="rc__author">
+              <div class="rc__avatar">K</div>
+              <div class="rc__info"><strong>Karol</strong><span>21 kwietnia 2026</span></div>
             </div>
           </div>
-        </div>
 
+          <!-- KONIEC OPINII -->
+        </div>
+        <button class="reviews__arrow reviews__arrow--next" aria-label="Następna opinia">&#8594;</button>
       </div>
+      <div class="reviews__dots" id="reviewsDots"></div>
+
     </div>
   </section>
 
