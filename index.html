@@ -552,6 +552,41 @@
     </div>
   </footer>
 
+  <!-- BANER ZGODY NA COOKIES (RODO) -->
+  <div class="cookie-banner" id="cookieBanner" hidden>
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        <strong>Ta strona używa plików cookies.</strong>
+        Niezbędne pliki cookies są zawsze aktywne. Opcjonalne (analityczne) pomagają mi zrozumieć, jak odwiedzający korzystają ze strony — włączam je tylko za Twoją zgodą.
+        <a href="/polityka-prywatnosci.html" class="cookie-banner__link">Polityka prywatności</a>
+      </div>
+
+      <div class="cookie-banner__settings" id="cookieSettings" hidden>
+        <label class="cookie-banner__category">
+          <span>
+            <strong>Niezbędne</strong>
+            <small>Formularz kontaktowy, działanie strony</small>
+          </span>
+          <input type="checkbox" checked disabled />
+          <span class="cookie-banner__always">Zawsze włączone</span>
+        </label>
+        <label class="cookie-banner__category">
+          <span>
+            <strong>Analityczne</strong>
+            <small>Google Analytics — statystyki odwiedzin</small>
+          </span>
+          <input type="checkbox" id="cookieAnalytics" />
+        </label>
+      </div>
+
+      <div class="cookie-banner__actions">
+        <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookieBtnSettings">Ustawienia</button>
+        <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieBtnReject">Odrzuć opcjonalne</button>
+        <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieBtnAccept">Akceptuj wszystkie</button>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

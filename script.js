@@ -1,3 +1,67 @@
+// =====================================================
+// COOKIE CONSENT + GOOGLE ANALYTICS
+// =====================================================
+(function () {
+  const STORAGE_KEY = 'cookie_consent';
+  const GA_ID = 'G-N2ZGWSFV4T';
+
+  function loadGA() {
+    // ładuje Google Analytics dopiero po zgodzie użytkownika
+    if (document.getElementById('ga-script')) return;
+    const s = document.createElement('script');
+    s.id = 'ga-script';
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+
+  function applyConsent(analytics) {
+    if (analytics) loadGA();
+  }
+
+  function saveAndClose(analytics) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics: analytics, date: new Date().toISOString() }));
+    document.getElementById('cookieBanner').hidden = true;
+    applyConsent(analytics);
+  }
+
+  // Sprawdź zapisaną zgodę
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    try { applyConsent(JSON.parse(saved).analytics); } catch (e) {}
+    return; // baner nie pokazuje się ponownie
+  }
+
+  // Pokaż baner przy pierwszej wizycie
+  const banner = document.getElementById('cookieBanner');
+  if (banner) banner.hidden = false;
+
+  // Przyciski
+  document.getElementById('cookieBtnAccept').addEventListener('click', () => saveAndClose(true));
+  document.getElementById('cookieBtnReject').addEventListener('click', () => saveAndClose(false));
+
+  const settingsBtn = document.getElementById('cookieBtnSettings');
+  const settingsPanel = document.getElementById('cookieSettings');
+  settingsBtn.addEventListener('click', () => {
+    const open = !settingsPanel.hidden;
+    settingsPanel.hidden = open;
+    settingsBtn.textContent = open ? 'Ustawienia' : 'Zapisz ustawienia';
+    if (!open) {
+      // "Zapisz ustawienia" — zapisuje wybór z checkboxa
+      settingsBtn.addEventListener('click', function save() {
+        const analytics = document.getElementById('cookieAnalytics').checked;
+        saveAndClose(analytics);
+        settingsBtn.removeEventListener('click', save);
+      }, { once: true });
+    }
+  });
+})();
+
 // Nav scroll effect
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
