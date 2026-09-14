@@ -1892,10 +1892,9 @@ ul { list-style: none; }
   background: linear-gradient(to bottom, transparent, #ffffff);
 }
 
-/* Why bottom fades into Reviews' ice-blue-2 */
+/* Why bottom — no fade overlay */
 .why::after {
-  height: 110px;
-  background: linear-gradient(to bottom, transparent, #F0F7FF);
+  height: 0;
 }
 
 /* Reviews bottom fades into CTA's light blue */
