@@ -505,9 +505,7 @@ ul { list-style: none; }
 
 .hero__float-pill {
   position: absolute;
-  background: rgba(7,21,37,0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(7,21,37,0.85);
   border: 1px solid rgba(255,255,255,0.13);
   border-radius: 100px;
   padding: 10px 20px;
