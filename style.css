@@ -1224,6 +1224,19 @@ ul { list-style: none; }
   gap: 8px;
   margin-top: 24px;
 }
+.reviews__source {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.82rem;
+  color: var(--text-mid);
+}
+.reviews__source-link {
+  color: #1E3A5F;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.reviews__source-link:hover { color: var(--royal-blue); }
 .reviews__dot {
   width: 8px;
   height: 8px;
@@ -1860,53 +1873,10 @@ ul { list-style: none; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* --- SECTION TRANSITIONS --- */
-.hero::after,
-.about::after,
-.offer::after,
-.why::after,
-.reviews::after,
-.cta-banner::after,
-.contact::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  pointer-events: none;
-  z-index: 20;
-}
-
-/* Hero bottom — no fade overlay */
-.hero::after {
-  height: 0;
-}
-
-/* About bottom fades into Offer's ice-blue-2 */
-.about::after {
-  height: 110px;
-  background: linear-gradient(to bottom, transparent, #F0F7FF);
-}
-
-/* Offer bottom fades into Why's white */
-.offer::after {
-  height: 110px;
-  background: linear-gradient(to bottom, transparent, #ffffff);
-}
-
-/* Why bottom — no fade overlay */
-.why::after {
-  height: 0;
-}
-
-/* Reviews bottom fades into CTA's light blue */
-.reviews::after {
-  height: 110px;
-  background: linear-gradient(to bottom, transparent, #f0f7ff);
-}
-
-/* CTA bottom fades into Contact's white */
+/* CTA bottom — placeholder kept for future use */
 .cta-banner::after {
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, #ffffff);
+  content: '';
+  height: 0;
 }
 
 /* Contact → Footer: no fade, hard cut handled by footer's own background */
