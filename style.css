@@ -392,7 +392,6 @@ ul { list-style: none; }
   padding: 140px 0 120px;
   overflow: hidden;
   background: linear-gradient(160deg, #071525 0%, #0d2340 50%, #1E3A5F 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
 }
 
 .hero__bg-glow {
@@ -1878,10 +1877,9 @@ ul { list-style: none; }
   z-index: 20;
 }
 
-/* Hero bottom fades into About's warm white */
+/* Hero bottom — no fade overlay */
 .hero::after {
-  height: 140px;
-  background: linear-gradient(to bottom, transparent, #fffdf9);
+  height: 0;
 }
 
 /* About bottom fades into Offer's ice-blue-2 */
